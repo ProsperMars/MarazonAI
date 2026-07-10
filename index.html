@@ -9,9 +9,9 @@
 <meta name="author" content="Emmanuel Marra, Marazon AI Solution">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.marazonai.com/">
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta property="og:type" content="website">
@@ -33,6 +33,8 @@
   "description": "Strategic AI consultancy providing fractional Chief AI Officer leadership, intelligent workflow automation, secure digital product development, and corporate AI training.",
   "url": "https://www.marazonai.com/",
   "email": "support@marazonai.com",
+  "telephone": "+1-202-754-3636",
+  "sameAs": ["https://www.linkedin.com/in/emmanuel-marra-marazon"],
   "founder": {
     "@type": "Person",
     "name": "Emmanuel Marra",
@@ -128,6 +130,21 @@
     transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--orange); }
+
+  .nav-cta {
+    background: var(--orange);
+    color: #fff;
+    padding: 12px 26px;
+    border-radius: 4px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.3px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .nav-cta:hover { background: var(--orange-light); transform: translateY(-1px); }
 
   /* Mobile hamburger */
   .hamburger {
@@ -831,17 +848,78 @@
   }
   .cta-guarantee svg { color: var(--blue); width: 16px; height: 16px; }
 
+  /* ── SECURITY NOTE + CALENDAR CTA ── */
+  .contact-security {
+    max-width: 640px;
+    margin: -12px auto 32px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  .contact-security svg { color: var(--blue); width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px; }
+  .contact-security strong { color: var(--white); font-weight: 500; }
+
+  .contact-divider {
+    max-width: 640px;
+    margin: 0 auto 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: var(--muted);
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .contact-divider::before,
+  .contact-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(255,255,255,0.1);
+  }
+
+  .contact-alt {
+    max-width: 640px;
+    margin: 0 auto 40px;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .contact-alt a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    border-radius: 4px;
+    border: 1px solid rgba(74,158,214,0.35);
+    color: var(--blue);
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .contact-alt a:hover { background: rgba(74,158,214,0.08); border-color: var(--blue); }
+  .contact-alt svg { width: 18px; height: 18px; }
+
   /* ── FOOTER ── */
   footer {
     background: #080f18;
     border-top: 1px solid rgba(255,127,39,0.08);
     padding: 40px 60px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    gap: 16px 24px;
     position: relative;
     z-index: 2;
   }
+  .footer-copy a { white-space: nowrap; }
 
   .footer-logo img {
     height: 48px;
@@ -865,6 +943,28 @@
     transition: color 0.2s;
   }
   .footer-links a:hover { color: var(--orange); }
+
+  .footer-social {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.12);
+    color: var(--muted);
+    transition: all 0.2s;
+  }
+  .footer-social a:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+  }
+  .footer-social svg { width: 17px; height: 17px; }
 
   /* ── ANIMATIONS ── */
   @keyframes fadeUp {
@@ -891,6 +991,7 @@
     nav { padding: 12px 24px; }
     .nav-logo img { height: 72px; }
     .nav-links { display: none; }
+    .nav-cta { display: none; }
     .hamburger { display: flex; }
     .mobile-menu { top: 96px; }
     .hero { padding: 100px 24px 60px; flex-direction: column; align-items: flex-start; }
@@ -937,6 +1038,7 @@
     flex-direction: column;
     gap: 8px;
     margin-bottom: 20px;
+    min-width: 0;
   }
   .form-group label {
     font-family: 'Chakra Petch', sans-serif;
@@ -947,7 +1049,11 @@
     color: var(--muted);
   }
   .form-group input,
+  .form-group select,
   .form-group textarea {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,127,39,0.2);
     border-radius: 4px;
@@ -959,9 +1065,20 @@
     transition: border-color 0.2s;
     resize: vertical;
   }
+  .form-group select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%239aacbf'%3E%3Cpath fill-rule='evenodd' d='M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z' clip-rule='evenodd'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 16px;
+    padding-right: 40px;
+  }
+  .form-group select option { background: var(--navy); color: var(--white); }
   .form-group input::placeholder,
   .form-group textarea::placeholder { color: rgba(154,172,191,0.5); }
   .form-group input:focus,
+  .form-group select:focus,
   .form-group textarea:focus { border-color: var(--orange); }
   .form-footer {
     display: flex;
@@ -995,8 +1112,8 @@
     <li><a href="#process">Process</a></li>
     <li><a href="#about">About Us</a></li>
     <li><a href="blog/">Blog</a></li>
-    <li><a href="#contact">Contact</a></li>
   </ul>
+  <a href="#contact" class="nav-cta">Request a Consultation →</a>
   <button class="hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
@@ -1039,8 +1156,8 @@
     <div class="hero-badge">Architecting AI Workflows. Accelerating Business Growth.</div>
     <h1>
       YOU KNOW <span class="accent">AI</span> MATTERS.<br>
-      WE SHOW YOU<br>
-      WHERE TO START.
+      WE MAKE IT<br>
+      PAY OFF.
     </h1>
     <p class="hero-sub">
       We find where AI can save your business real time and money — then build tailored systems that deliver measurable results.
@@ -1276,6 +1393,19 @@
   <h2 class="fade-in">READY TO<br>SCALE <span style="color:var(--orange)">SAFELY?</span></h2>
   <p class="fade-in">Partner with a fractional Chief AI Officer and walk away with a clear picture of where automation and governance can strengthen your operation.</p>
 
+  <div class="contact-alt fade-in">
+    <a href="https://calendar.app.google/HY27fBpHpCoixSTdA" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M16 2.5v4M8 2.5v4M3 9.5h18"/></svg>
+      Free 30-Min Strategy Call
+    </a>
+    <a href="tel:+12027543636">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106a2.25 2.25 0 00-2.239.79l-.665.855a12.19 12.19 0 01-5.845-5.845l.855-.665a2.25 2.25 0 00.79-2.239L7.464 3.6a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 5v1.75z"/></svg>
+      Call 202-754-3636
+    </a>
+  </div>
+
+  <div class="contact-divider fade-in">or send a message</div>
+
   <div class="contact-form-wrap fade-in">
     <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleContactForm(event)">
       <input type="hidden" name="form-name" value="contact">
@@ -1283,20 +1413,32 @@
       <div class="form-row">
         <div class="form-group">
           <label for="contact-name">Your Name</label>
-          <input type="text" id="contact-name" name="name" placeholder="Jane Smith" required />
+          <input type="text" id="contact-name" name="name" required />
         </div>
         <div class="form-group">
           <label for="contact-email">Email Address</label>
-          <input type="email" id="contact-email" name="email" placeholder="jane@company.com" required />
+          <input type="email" id="contact-email" name="email" required />
         </div>
       </div>
       <div class="form-group">
         <label for="contact-company">Company / Business</label>
-        <input type="text" id="contact-company" name="company" placeholder="Acme Corp" />
+        <input type="text" id="contact-company" name="company" />
       </div>
       <div class="form-group">
-        <label for="contact-message">What are you looking to automate?</label>
-        <textarea id="contact-message" name="message" rows="4" placeholder="Tell us about your current workflows and what's slowing you down..." required></textarea>
+        <label for="contact-service">What are you interested in?</label>
+        <select id="contact-service" name="service">
+          <option value="" disabled selected>Select an option</option>
+          <option value="Fractional Chief AI Officer & Strategic Consultancy">Fractional Chief AI Officer &amp; Strategic Consultancy</option>
+          <option value="Intelligent Workflow Automation">Intelligent Workflow Automation</option>
+          <option value="Digital Product Development">Digital Product Development</option>
+          <option value="Corporate AI Training & Workshops">Corporate AI Training &amp; Workshops</option>
+          <option value="Nonprofit / Community Workshop">Nonprofit / Community Workshop</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="contact-message">How can we help?</label>
+        <textarea id="contact-message" name="message" rows="4" placeholder="Tell us about your business and what's slowing you down — automation, a custom AI tool, strategy, or team training."></textarea>
       </div>
       <div class="form-footer">
         <button type="submit" class="btn-primary">Send Message &amp; Request Consultation →</button>
@@ -1310,6 +1452,11 @@
     </form>
   </div>
 
+  <div class="contact-security fade-in">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2.25l8 3.5v5.5c0 5.25-3.5 8.75-8 10.5-4.5-1.75-8-5.25-8-10.5v-5.5l8-3.5z"/></svg>
+    <span><strong>Your data stays private.</strong> Everything you share here is handled under strict, isolated data governance — never sold, never shared, and never used to train public AI models.</span>
+  </div>
+
   <div class="cta-guarantee fade-in">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
@@ -1321,12 +1468,17 @@
 <!-- FOOTER -->
 <footer>
   <a href="#" class="footer-logo"><img src="assets/logo.png" alt="Marazon AI Solution"></a>
-  <div class="footer-copy">© <span id="footerYear">2026</span> Marazon AI Solution. All rights reserved.</div>
+  <div class="footer-copy">© <span id="footerYear">2026</span> Marazon AI Solution. All rights reserved. · <a href="tel:+12027543636" style="color:inherit">202-754-3636</a></div>
   <div class="footer-links">
     <a href="#services">Services</a>
     <a href="#about">About Us</a>
     <a href="blog/">Blog</a>
     <a href="#contact">Contact</a>
+  </div>
+  <div class="footer-social">
+    <a href="https://www.linkedin.com/in/emmanuel-marra-marazon" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 110-4.13 2.07 2.07 0 010 4.13zM7.11 20.45H3.56V9h3.55v11.45z"/></svg>
+    </a>
   </div>
 </footer>
 
